@@ -8,8 +8,16 @@ db.prepare(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         email TEXT UNIQUE NOT NULL,
         name TEXT NOT NULL
-    )
+    )`
+).run()
+
+db.prepare(
     `
+    CREATE TABLE IF NOT EXISTS tydy (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        status INTEGER NOT NULL
+    )`
 ).run()
 
 module.exports = db
